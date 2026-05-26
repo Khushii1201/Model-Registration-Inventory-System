@@ -31,7 +31,7 @@ MySQL / MongoDB
 🔹 Tools
 
 Git & GitHub
-VS Code
+Pycharm
 Postman
 
 
