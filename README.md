@@ -22,9 +22,7 @@ CSS3 / Bootstrap
 JavaScript
 
 🔹 Backend
-
-Node.js
-Express.js
+Python,Pandas,NumPy
 
 🔹 Database
 
