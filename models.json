@@ -1,0 +1,12 @@
+[
+    {
+        "model_id": "MODEL-1",
+        "name": "Fraud Model",
+        "version": "v1.0",
+        "sponsor": "Risk Team",
+        "business_line": "Risk",
+        "model_type": "Fraud",
+        "risk": "High",
+        "status": "Production"
+    }
+]
