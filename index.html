@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection</title>
+</head>
+<body>
+
+    <h2>Fraud Detection System</h2>
+
+    <form method="POST">
+
+        <label>Amount:</label><br>
+        <input type="number" name="amount" required><br><br>
+
+        <label>Time:</label><br>
+        <select name="time">
+            <option>Day</option>
+            <option>Night</option>
+        </select><br><br>
+
+        <label>Location:</label><br>
+        <input type="text" name="location"><br><br>
+
+        <button type="submit">Check Fraud</button>
+
+    </form>
+
+    {% if result %}
+        <h3>Result:</h3>
+        <p>Fraud Status: {{ result['Fraud Status'] }}</p>
+        <p>Risk Level: {{ result['Risk Level'] }}</p>
+    {% endif %}
+
+</body>
+</html>
