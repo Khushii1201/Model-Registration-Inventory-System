@@ -2,6 +2,21 @@
 <html>
 <head>
     <title>Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,6 +37,10 @@
         <input type="text" name="location"><br><br>
 
         <button type="submit">Check Fraud</button>
+        <form action="/train" method="post">
+            <button type="submit">Train ML Model</button>
+        </form>
+        ``
 
     </form>
 
