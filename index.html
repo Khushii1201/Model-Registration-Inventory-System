@@ -1,54 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fraud Detection</title>
+    <title>Fraud Detection System</title>
+
     <style>
         body {
             font-family: Arial;
+            background-color: #f4f6f8;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
             padding: 20px;
+            margin: auto;
+            margin-top: 60px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
         }
+
+        h2 {
+            color: #333;
+        }
+
         input, select {
+            width: 90%;
             padding: 8px;
-            margin: 5px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
+
         button {
             padding: 10px;
-            background-color: blue;
+            width: 95%;
+            background-color: #007BFF;
             color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .fraud {
+            background-color: #ffe5e5;
+            color: red;
+        }
+
+        .safe {
+            background-color: #e6ffe6;
+            color: green;
         }
     </style>
 </head>
+
 <body>
 
-    <h2>Fraud Detection System</h2>
+<div class="container">
+
+    <h2>Fraud Detection</h2>
 
     <form method="POST">
 
-        <label>Amount:</label><br>
-        <input type="number" name="amount" required><br><br>
+        <input type="number" name="amount" placeholder="Enter Amount" required>
 
-        <label>Time:</label><br>
         <select name="time">
             <option>Day</option>
             <option>Night</option>
-        </select><br><br>
+        </select>
 
-        <label>Location:</label><br>
-        <input type="text" name="location"><br><br>
+        <input type="text" name="location" placeholder="Enter Location" required>
 
         <button type="submit">Check Fraud</button>
-        <form action="/train" method="post">
-            <button type="submit">Train ML Model</button>
-        </form>
-        ``
+        <button type="reset">Clear</button>
 
     </form>
 
     {% if result %}
-        <h3>Result:</h3>
-        <p>Fraud Status: {{ result['Fraud Status'] }}</p>
-        <p>Risk Level: {{ result['Risk Level'] }}</p>
+        <div class="result {% if result['Fraud Status'] == 'Fraud' %}fraud{% else %}safe{% endif %}">
+            <h3>{{ result['Fraud Status'] }}</h3>
+            <p><b>Risk Level:</b> {{ result['Risk Level'] }}</p>
+        </div>
     {% endif %}
+
+</div>
 
 </body>
 </html>
+``
