@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fraud Detection Dashboard</title>
+    <title>Fraud Detection Dashboard Project</title>
 
     <style>
         body {
@@ -151,6 +151,29 @@
             <strong>Risk Level:</strong> {{ result['Risk Level'] }}
 
         </div>
+        {% if transactions %}
+    <h3>Transaction Inventory</h3>
+
+    <table border="1" style="width:100%; margin-top:10px; border-collapse: collapse;">
+        <tr style="background-color:#ddd;">
+            <th>Amount</th>
+            <th>Time</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Risk</th>
+        </tr>
+
+        {% for t in transactions %}
+        <tr>
+            <td>{{ t.amount }}</td>
+            <td>{{ t.time }}</td>
+            <td>{{ t.location }}</td>
+            <td>{{ t.fraud }}</td>
+            <td>{{ t.risk }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
     {% endif %}
     <div class="info-box">
         💡 System uses rule-based fraud detection logic  
