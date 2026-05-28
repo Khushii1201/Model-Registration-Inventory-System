@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Model Inventory</title>
+
+<style>
+body { font-family: Arial; background:#f4f4f4; text-align:center; }
+
+table {
+    margin:auto;
+    width:90%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding:10px;
+    border:1px solid black;
+}
+
+th {
+    background:#333;
+    color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Model Inventory</h2>
+
+{% if models %}
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Version</th>
+<th>Sponsor</th>
+<th>Business</th>
+<th>Type</th>
+<th>Risk</th>
+<th>Status</th>
+</tr>
+
+{% for m in models %}
+<tr>
+<td>{{ m.model_id }}</td>
+<td>{{ m.name }}</td>
+<td>{{ m.version }}</td>
+<td>{{ m.sponsor }}</td>
+<td>{{ m.business_line }}</td>
+<td>{{ m.model_type }}</td>
+<td>{{ m.risk }}</td>
+<td>{{ m.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% else %}
+
+<p>No models registered yet</p>
+
+{% endif %}
+
+<br>
+<a href="/">← Register New Model</a>
+
+</body>
+</html>

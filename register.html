@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Registration</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .container {
+            width: 420px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2e59d9;
+        }
+
+        .success {
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            margin-top: 15px;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: #4e73df;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h2>Model Risk Management System</h2>
+</div>
+
+<div class="container">
+
+    <h2>Register New Model</h2>
+
+    <form method="POST">
+
+        <input type="text" name="name" placeholder="Model Name" required>
+
+        <input type="text" name="version" placeholder="Model Version (v1.0)" required>
+
+        <input type="text" name="sponsor" placeholder="Model Sponsor" required>
+
+        <select name="business_line" required>
+            <option value="">Select Business Line</option>
+            <option>Retail Banking</option>
+            <option>Wholesale Lending</option>
+            <option>Investment Banking</option>
+            <option>Risk Management</option>
+        </select>
+
+        <select name="model_type" required>
+            <option value="">Select Model Type</option>
+            <option>Fraud Model</option>
+            <option>Risk Model</option>
+        </select>
+
+        <select name="risk" required>
+            <option value="">Risk Rating</option>
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <select name="status" required>
+            <option value="">Select Status</option>
+            <option>In Development</option>
+            <option>Validated</option>
+            <option>Production</option>
+            <option>Retired</option>
+        </select>
+
+        <button type="submit">Register Model</button>
+
+    </form>
+
+    <!-- ✅ SUCCESS MESSAGE -->
+    {% if message %}
+        <div class="success">{{ message }}</div>
+    {% endif %}
+
+    <!-- ✅ NAVIGATION -->
+    <div class="nav-link">
+        <a href="/inventory">View Model Inventory →</a>
+    </div>
+
+</div>
+
+</body>
+</html>
