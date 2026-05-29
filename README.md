@@ -1,128 +1,116 @@
-# Model-Registration-Inventory-System
-Developing a system that allows user to register new models, assign unique identifiers, and view all the models in a centralized inventory. 
-📖 Overview
-The Model Registration and Inventory Management System is a web-based application designed to manage the lifecycle of models in a centralized and structured manner. It enables users to register new models, automatically generate unique identifiers, and view all registered models in a unified inventory grid.
-This system supports Model Risk Management (MRM) processes by ensuring proper documentation, tracking, and visibility of models across the organization.
+Model Risk Management System
 
-🎯 Features
+--------------------------------------------------
 
-✅ Register new models with detailed attributes
-✅ Automatic unique Model ID generation
-✅ Form validation for mandatory fields
-✅ Centralized model inventory view
-✅ Real-time data update in inventory grid
-✅ Clean and user-friendly interface
+📌 Project Description:
+This project is a Model Risk Management System that allows users to register models and manage them through a centralized inventory.
 
+The system captures key model attributes, generates a unique Model ID, and displays all registered models in a structured grid format.
 
-🧩 Tech Stack
-🔹 Frontend
+--------------------------------------------------
 
-HTML5
-CSS3 / Bootstrap
-JavaScript
+🎯 Objective:
+To implement a system where users can:
+- Register new models with required details
+- Automatically generate unique Model IDs
+- View all models in a centralized inventory
 
-🔹 Backend
-Python,Pandas,NumPy
+--------------------------------------------------
 
-🔹 Database
+⚙️ Features:
 
-MySQL / MongoDB
+✅ Model Registration
+- Capture model details such as:
+  - Model Name
+  - Model Version
+  - Model Sponsor
+  - Business Line
+  - Model Type (Fraud Model / Risk Model)
+  - Risk Rating (High / Medium / Low)
+  - Status (Development / Production / etc.)
 
-🔹 Tools
+✅ Automatic Model ID Generation
+- Each model is assigned a unique ID
+- Format: MODEL-1, MODEL-2, MODEL-3, etc.
 
-Git & GitHub
-Pycharm
-Postman
-VSCode
+✅ Model Inventory Dashboard
+- Displays all registered models in a table format
+- Includes all model attributes in separate columns
+- Provides a centralized view of all models
 
+✅ User-Friendly Interface
+- Web-based UI using Flask and HTML/CSS
+- Clean and interactive forms for easy input
 
-🏗️ System Workflow
+--------------------------------------------------
 
-User logs into the system
-Navigates to Model Registration
-Fills in model details:
+🏗️ Technologies Used:
 
-Model Name
-Version
-Sponsor
-Business Line
-Model Type
-Risk Rating
-Status
+- Python
+- Flask (Backend & Web Framework)
+- HTML
+- CSS
+- JSON (for data storage)
 
+--------------------------------------------------
 
-Submits the form
-System:
+📂 Project Structure:
 
-Validates inputs
-Generates unique Model ID
-Stores data in database
+project/
+│
+├── web_app.py          → Main Flask application
+├── model_registry.py   → Backend logic for storing models
+├── models.json         → Data storage file
+│
+└── templates/
+    ├── register.html    → Model Registration UI
+    └── inventory.html   → Model Inventory UI
 
+--------------------------------------------------
 
-User opens Model Inventory
-All registered models are displayed in a grid
+▶️ How to Run:
 
+1. Open terminal
+2. Navigate to project folder
+3. Run command:
 
-📊 Model Attributes
-Each model includes the following details:
+   python web_app.py
 
-Model ID (auto-generated)
-Model Name
-Model Version
-Model Sponsor
-Business Line
-Model Type
-Risk Rating
-Status
+4. Open browser and go to:
 
+   http://127.0.0.1:5000/
 
-✅ Acceptance Criteria Covered
+--------------------------------------------------
 
-Form must capture all required model details
-Mandatory fields validation enforced
-Unique Model ID generated for each model
-Inventory displays all registered models
-Displays “No models registered” when empty
-Newly added models appear instantly in inventory
+🧠 System Workflow:
 
+Register Model → Store Data → Generate ID → Display in Inventory
 
-🚀 How to Run the Project
-Prerequisites
+--------------------------------------------------
 
-Node.js installed
-Database (MySQL or MongoDB)
-Git installed
+📊 Example:
 
-Steps
-Shell# Clone repositorygit clone <your-repo-link># Navigate into foldercd model-registration-system# Install dependenciesnpm install# Start servernpm startShow more lines
+MODEL-1 → Fraud Detection Model → Risk Management → High → Production  
+MODEL-2 → Risk Assessment Model → Risk Management → Medium → Development  
 
-📸 Screens (Optional)
-You can add screenshots here:
+--------------------------------------------------
 
-Registration Form UI
-Model Inventory Grid
+📌 Notes:
 
+- The system is rule-based and focuses on model management
+- Fraud Model and Risk Model are used as sample model types
+- Data is stored locally using JSON file
 
-🔐 User Roles
+--------------------------------------------------
 
-MRM Administrator – Full access to register and view models
-Model Owner/Sponsor – Provides model details
+🚀 Future Enhancements:
 
+- Add database integration (MySQL / SQLite)
+- Add search and filter functionality in inventory
+- Add model update and delete features
+- Improve UI with dashboard analytics
 
-💡 Future Enhancements
+--------------------------------------------------
 
-🔹 Role-based access control
-🔹 Advanced filtering & search
-🔹 Model version comparison
-🔹 Audit logs & tracking
-🔹 Dashboard with analytics
-
-
-🤝 Contribution
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
-
-📜 License
-This project is for academic / internal use.
-
-👩‍💻 Author
+👩‍💻 Developed By:
 Khushi Wadhwa
